@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Calculator</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+   <style>
+
+
+
+        body {
+            margin-left: 100px;
+            margin-right: 100px;
+            background: #f953c6;
+            /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #b91d73, #f953c6);
+            /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #b91d73, #f953c6);
+            /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        }
+
+        .header {
+            text-align: center;
+        }
+
+        .container {
+            text-align: center;
+            border: 2px solid rgb(243, 77, 104);
+            height: 400px;
+            background-color: plum;
+        }
+
+        .fix {
+            position: relative;
+            left: -55px;
+            top: 25px;
+        }
+
+        .container img {
+            height: auto;
+            width: 6%;
+            position: relative;
+            left: 218px;
+            top: -20px;
+        }
+
+        #btn {
+            position: relative;
+            top: 30px;
+            left: 44px;
+        }
+
+        @media (max-width:500px){
+            .fix{
+                left: 0px;
+                top: 15px;
+            }
+
+            #btn{
+                top: 40px;
+                left: 0px;
+            }
+
+            .container img{
+                text-align: center;
+                    left: 68px;
+                    width: 10%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>Love Calculator</h1>
+        <p>Measure Your Love</p>
+    </div>
+    <div class="container">
+        <h2 id="percentage">Check Your Love Precent</h2>
+        <br>
+        <label for="username">Your Name :</label>
+        <input type="text" id="username">
+        <br><br>
+        <img src="https://media0.giphy.com/media/LpDmM2wSt6Hm5fKJVa/giphy.gif?cid=ecf05e476py5ttmr25e8b8vsivolmss9o4t3jz6kgposi6g3&rid=giphy.gif&ct=s"
+            alt="">
+        <label for="crushname" class="fix">Loved One Name :</label>
+        <input type="text" id="crushname" class="fix">
+        <br>
+        <button type="button" class="btn btn-outline-danger" id="btn">Check</button>
+            <br><br><br><br>
+        <span id="suggest">Suggestion :- </span>
+    </div>
+    <script>
+        function calculate(){
+            let n = Math.random();
+            n = (n*100)+1;
+            n = Math.floor(n);
+            document.getElementById("percentage").innerText = n+" %";
+            
+
+            if(n>80){
+                document.getElementById("suggest").innerText = "Suggestion :- Don't Listen to Anyone Best Couple Made 4 each others";
+            }
+            else if(n>50 && n<80){
+                document.getElementById("suggest").innerText = "Suggestion :- Your Partner Expects More Attention From You";
+            }
+            else if(n>15 && n<50){
+                document.getElementById("suggest").innerText = "Suggestion :- Relationship Requires Care and Time";
+            }
+
+            else{
+                document.getElementById("suggest").innerText = "Suggestion :- Maybe It's Time to Move On";
+            }
+
+            if(n==100){
+                document.getElementById("suggest").innerText = "Suggestion :- Best Couple award goes to you Guys";
+            }
+        }
+     document.getElementById("btn").addEventListener("click",calculate);
+
+    </script>
+</body>
+
+</html>

@@ -56,7 +56,7 @@
 
         @media (max-width:500px){
             .fix{
-                left: 0px;
+                left: -10px;
                 top: 15px;
             }
 
@@ -70,6 +70,11 @@
                     left: 68px;
                     width: 10%;
             }
+
+            .fix1{
+                position: relative;
+                left: -10px;
+            }
         }
     </style>
 </head>
@@ -82,8 +87,8 @@
     <div class="container">
         <h2 id="percentage">Check Your Love Precent</h2>
         <br>
-        <label for="username">Your Name :</label>
-        <input type="text" id="username">
+        <label for="username" class="fix1">Your Name :</label>
+        <input type="text" id="username" class="fix1">
         <br><br>
         <img src="https://media0.giphy.com/media/LpDmM2wSt6Hm5fKJVa/giphy.gif?cid=ecf05e476py5ttmr25e8b8vsivolmss9o4t3jz6kgposi6g3&rid=giphy.gif&ct=s"
             alt="">
